@@ -176,7 +176,7 @@ window.onload = function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../APIs.html">APIs</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub.html">Sentinel Hub</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Data/Sentinel1GRD.html">Data</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Data/Sentinel1GRD.html">Sentinel-1 GRD</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../APIs.html">APIs</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub.html">Sentinel Hub</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Data/S1GRD.html">Data</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Data/S1GRD.html">Sentinel-1 GRD</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -573,7 +573,7 @@ window.onload = function() {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../APIs/SentinelHub/Data/Sentinel1GRD.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../APIs/SentinelHub/Data/S1GRD.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Sentinel-1 GRD</span></a>
   </div>
 </li>
@@ -1002,24 +1002,10 @@ window.onload = function() {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-sentinel-1-grd-data" id="toc-about-sentinel-1-grd-data" class="nav-link active" data-scroll-target="#about-sentinel-1-grd-data">About Sentinel-1 GRD Data</a>
-  <ul>
-  <li><a href="#mission-information" id="toc-mission-information" class="nav-link" data-scroll-target="#mission-information">Mission Information</a>
-  <ul class="collapse">
-  <li><a href="#observation-scenarios" id="toc-observation-scenarios" class="nav-link" data-scroll-target="#observation-scenarios">Observation Scenarios</a></li>
-  </ul></li>
-  <li><a href="#attribution-and-use" id="toc-attribution-and-use" class="nav-link" data-scroll-target="#attribution-and-use">Attribution and Use</a></li>
-  </ul></li>
-  <li><a href="#processing-chain" id="toc-processing-chain" class="nav-link" data-scroll-target="#processing-chain">Processing Chain</a>
-  <ul>
-  <li><a href="#card4l-data" id="toc-card4l-data" class="nav-link" data-scroll-target="#card4l-data">CARD4L Data</a></li>
-  </ul></li>
+  <li><a href="#about-sentinel-1-grd-data" id="toc-about-sentinel-1-grd-data" class="nav-link active" data-scroll-target="#about-sentinel-1-grd-data">About Sentinel-1 GRD Data</a></li>
+  <li><a href="#processing-chain" id="toc-processing-chain" class="nav-link" data-scroll-target="#processing-chain">Processing Chain</a></li>
   <li><a href="#accessing-sentinel-1-grd-data" id="toc-accessing-sentinel-1-grd-data" class="nav-link" data-scroll-target="#accessing-sentinel-1-grd-data">Accessing Sentinel-1 GRD Data</a>
   <ul>
-  <li><a href="#endpoint-locations" id="toc-endpoint-locations" class="nav-link" data-scroll-target="#endpoint-locations">Endpoint Locations</a>
-  <ul class="collapse">
-  <li><a href="#differences-in-capabilities" id="toc-differences-in-capabilities" class="nav-link" data-scroll-target="#differences-in-capabilities">Differences in Capabilities</a></li>
-  </ul></li>
   <li><a href="#data-type-identifier-sentinel-1-grd" id="toc-data-type-identifier-sentinel-1-grd" class="nav-link" data-scroll-target="#data-type-identifier-sentinel-1-grd">Data type identifier: sentinel-1-grd</a></li>
   <li><a href="#filtering-options" id="toc-filtering-options" class="nav-link" data-scroll-target="#filtering-options">Filtering Options</a>
   <ul class="collapse">
@@ -1042,7 +1028,6 @@ window.onload = function() {
   <li><a href="#collection-specific-constraints" id="toc-collection-specific-constraints" class="nav-link" data-scroll-target="#collection-specific-constraints">Collection specific constraints</a></li>
   <li><a href="#catalog-api-capabilities" id="toc-catalog-api-capabilities" class="nav-link" data-scroll-target="#catalog-api-capabilities">Catalog API Capabilities</a>
   <ul>
-  <li><a href="#endpoint-locations-1" id="toc-endpoint-locations-1" class="nav-link" data-scroll-target="#endpoint-locations-1">Endpoint Locations</a></li>
   <li><a href="#collection-identifier-sentinel-1-grd" id="toc-collection-identifier-sentinel-1-grd" class="nav-link" data-scroll-target="#collection-identifier-sentinel-1-grd">Collection identifier: sentinel-1-grd</a></li>
   <li><a href="#filter-extension" id="toc-filter-extension" class="nav-link" data-scroll-target="#filter-extension">Filter extension</a></li>
   <li><a href="#distinct-extension" id="toc-distinct-extension" class="nav-link" data-scroll-target="#distinct-extension">Distinct extension</a></li>
@@ -1073,44 +1058,7 @@ window.onload = function() {
 
 <section id="about-sentinel-1-grd-data" class="level2">
 <h2 class="anchored" data-anchor-id="about-sentinel-1-grd-data">About Sentinel-1 GRD Data</h2>
-<section id="mission-information" class="level3">
-<h3 class="anchored" data-anchor-id="mission-information">Mission Information</h3>
-<p>The Sentinel-1 imagery is provided by two (see the note below) polar-orbiting satellites, operating day and night performing C-band synthetic aperture radar imaging, enabling them to acquire imagery regardless of the weather. Main applications are for monitoring sea ice, oil spills, marine winds, waves &amp; currents, land-use change, land deformation among others, and to respond to emergencies such as floods and earthquakes.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>**** <em>On December 23, 2021, one of the two satellites - Sentinel-1B - encountered an anomaly of the power unit, causing SAR functionality to be lost, and the satellite will be intentionally deorbited in the future. ESA also plans to launch Sentinel-1C in the second quarter of 2023, a process typically followed by 3-6 months of the calibration process. Thus, between December 23, 2021 and the launch of a new satellite, only data from Sentinel-1A is available, which means some areas lost coverage completely, and many others have longer revisit times.</em></p>
-</div>
-</div>
-<p>Sentinel Hub currently supports Sentinel-1 Level-1 GRD (Ground Range Detected) products only. See other <a href="https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-1/Data_products" target="_blank">Sentinel-1 products</a> offered by ESA.</p>
-<section id="observation-scenarios" class="level4">
-<h4 class="anchored" data-anchor-id="observation-scenarios">Observation Scenarios</h4>
-<p>Observation scenario defines the acquisition mode and polarization with which the Sentinel-1 will acquire data over certain area. When searching for the data the observation scenario can be helpful when selecting a combination of values of different parameters. Below is an example of observation scenario but it may vary through time depending on requirements. The full <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario/archive" target="_blank">archive</a> of observation scenarios is available.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Sentinel-1-Mode-Polarisation-Geometry-2022.png" title="S-1A observation scenario" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Image</figcaption>
-</figure>
-</div>
-<p>(<a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario" target="_blank">Source ESA</a>)</p>
-<p>More information:</p>
-<ul>
-<li><a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1" target="_blank">[https://sentinel.esa.int/web/sentinel/missions/sentinel-1](https://sentinel.esa.int/web/sentinel/missions/sentinel-1){target=“_blank”}</a></li>
-<li><a href="https://earth.esa.int/web/sentinel/user-guides/sentinel-1-sar" target="_blank">Dataset user guide</a></li>
-</ul>
-</section>
-</section>
-<section id="attribution-and-use" class="level3">
-<h3 class="anchored" data-anchor-id="attribution-and-use">Attribution and Use</h3>
-<p>The Sentinel products are released under the license available <a href="https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice" target="_blank">here</a>.</p>
-</section>
+<p>General information about Sentinel-1 mission can be found <a href="../../../Data/Sentinel1.html">here</a> Sentinel Hub offers <a href="../../../Data/Sentinel1.html#sentinel-1-level-1-ground-range-detected-grd">Sentinel-1 Level 1 Ground Range Detected products</a>. For spatio-temporal availability refer to “Packed or Unpacked, SAFE with Cloud optimized GeoTIFF” in <a href="../../../Data/Sentinel1.html#offered-data">this table</a>.</p>
 </section>
 <section id="processing-chain" class="level2">
 <h2 class="anchored" data-anchor-id="processing-chain">Processing Chain</h2>
@@ -1129,67 +1077,10 @@ Note
 <li>Radiometric terrain correction can only be performed if orthorectification is enabled. The DEM oversampling parameter is by default set to 2 and can be user adjusted. For low resolution requests (many meters per pixel) increasing it to 3, for example, can be worthwhile to reduce artifacts. Integer values are recommended. See also the S1GRD <a href="../../../APIs/SentinelHub/ApiReference.html">API Reference</a>.</li>
 <li>The DEM, if used, is resampled using bilinear interpolation, and the same DEM is used for both radiometric terrain correction and orthorectification, provided both are enabled.</li>
 </ul>
-<section id="card4l-data" class="level3">
-<h3 class="anchored" data-anchor-id="card4l-data">CARD4L Data</h3>
-<p>CARD4L or <em><a href="https://ceos.org/ard/" target="_blank">CEOS Analysis Ready Data</a> for Land</em> refers to Sentinel-1 satellite data that has been processed to a predefined set of requirements (specifically <a href="https://ceos.org/ard/files/PFS/NRB/v5.5/CARD4L-PFS_NRB_v5.5.pdf" target="_blank">Normalised Radar Backscatter</a> requirements), making Sentinel-1 data analysis ready and thus reducing its complexity. It is especially useful for non-expert users, as it does most of the data preparation work in advance, including geometric and radiometric correction. CARD4L also takes care of obligatory and extensive metadata generation, detailing data provenance, processing parameters, etc.</p>
-<p>We have created a <a href="https://apps.sentinel-hub.com/s1-card4l/" target="_blank">CARD4L request generation tool</a>, which makes it easy to process CARD4L <a href="https://ceos.org/ard/files/Self%20Assessments/NRB/v5.5/WGCV_CARD4L_Assessment_for_Sinergise_Sentinel-1_NRB_v5.5.pdf" target="_blank">compliant</a> Sentinel-1 data. To use it, you will need an <a href="https://www.sentinel-hub.com/pricing/" target="_blank">enterprise account</a>, which activates access to batch processing. Note that you can get the equivalent raster data with the correct settings in an API request yourself, however metadata can only be obtained using the tool.</p>
-<p><strong>Articles and use-cases</strong></p>
-<ul>
-<li>We are processing Sentinel-1 CARD4L data for the <a href="https://docs.digitalearthafrica.org/en/latest/index.html" target="_blank">Digital Earth Africa project</a>. Technical information about the data and how to access it may be found <a href="https://docs.digitalearthafrica.org/en/latest/data_specs/Sentinel-1_specs.html" target="_blank">here</a>.</li>
-<li><a href="https://www.mdpi.com/2072-4292/14/2/351" target="_blank">An Operational Analysis Ready Radar Backscatter Dataset for the African Continent</a>, January 2022</li>
-<li><a href="https://www.researchgate.net/publication/355208945_Intercomparison_of_Sentinel-1_Datasets_from_Google_Earth_Engine_and_the_Sinergise_Sentinel_Hub_Card4L_Tool" target="_blank">Intercomparison of Sentinel-1 Datasets from Google Earth Engine and the Sinergise Sentinel Hub Card4L Tool</a>, July 2021</li>
-</ul>
-</section>
 </section>
 <section id="accessing-sentinel-1-grd-data" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-sentinel-1-grd-data">Accessing Sentinel-1 GRD Data</h2>
 <p>To access data you need to send a POST request to our <code>process</code> API. The requested data will be returned as the response to your request. Each POST request can be tailored to get you exactly the data you require. To do this requires setting various parameters which depend on the data collection you are querying. This chapter will help you understand the parameters for S1GRD data. To see examples of such requests go <a href="../../../data/sentinel-1-grd/examples/">here</a>, and for an overview of all API parameters see the S1GRD <a href="../../../APIs/SentinelHub/ApiReference.html#operation/process">API Reference</a>.</p>
-<section id="endpoint-locations" class="level3">
-<h3 class="anchored" data-anchor-id="endpoint-locations">Endpoint Locations</h3>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Service</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">services.sentinel-hub.com/api/</td>
-<td style="text-align: left;">Global since October 2014</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">creodias.sentinel-hub.com/api/</td>
-<td style="text-align: left;">Rolling policy of 1 month for World</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">shservices.mundiwebservices.com/api/</td>
-<td style="text-align: left;">Rolling policy of 48 months for Europe <br> Rolling policy of 12 months for World</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">code-de.sentinel-hub.com/api/</td>
-<td style="text-align: left;">Germany since October 2014</td>
-</tr>
-</tbody>
-</table>
-<section id="differences-in-capabilities" class="level4">
-<h4 class="anchored" data-anchor-id="differences-in-capabilities">Differences in Capabilities</h4>
-<ul>
-<li><p>Features:</p>
-<ul>
-<li>@ services.sentinel-hub.com/api/ : Zooming out will use multi-looked sources at an appropriate resolution to your viewing level. You can therefore expect high quality results at all zoom levels.</li>
-<li>@ shservices.mundiwebservices.com/api/ : Zooming out will use multi-looked sources at an appropriate resolution to your viewing level. You can therefore expect high quality results at all zoom levels.</li>
-<li>@ creodias.sentinel-hub.com/api/ : Zooming out will use multi-looked sources at an appropriate resolution to your viewing level. You can therefore expect high quality results at all zoom levels.</li>
-</ul></li>
-<li><p>Backscatter coefficients:</p>
-<ul>
-<li>@ services.sentinel-hub.com/api/ : We support all backscatter coefficients.</li>
-<li>@ shservices.mundiwebservices.com/api/ : We support all backscatter coefficients.</li>
-<li>@ creodias.sentinel-hub.com/api/ : We support all backscatter coefficients.</li>
-</ul></li>
-</ul>
-</section>
-</section>
 <section id="data-type-identifier-sentinel-1-grd" class="level3">
 <h3 class="anchored" data-anchor-id="data-type-identifier-sentinel-1-grd">Data type identifier: sentinel-1-grd</h3>
 <p>Use <code>sentinel-1-grd</code> (previously <code>S1GRD</code>) as the value of the <code>input.data.type</code> parameter in your API requests. This is mandatory and will ensure you get Sentinel-1 GRD data.</p>
@@ -1626,35 +1517,6 @@ Note
 <section id="catalog-api-capabilities" class="level2">
 <h2 class="anchored" data-anchor-id="catalog-api-capabilities">Catalog API Capabilities</h2>
 <p>To access Sentinel-1 GRD product metadata you need to send search request to our <a href="../../../APIs/SentinelHub/Catalog.html">Catalog API</a>. The requested metadata will be returned as JSON formatted response to your request. This chapter will help with understanding Sentinel 1 GRD specific parameters for search request.</p>
-<section id="endpoint-locations-1" class="level3">
-<h3 class="anchored" data-anchor-id="endpoint-locations-1">Endpoint Locations</h3>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Service</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">services.sentinel-hub.com/api/v1/catalog/collections/sentinel-1-grd</td>
-<td style="text-align: left;">Global since October 2014</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">creodias.sentinel-hub.com/api/v1/catalog/collections/sentinel-1-grd</td>
-<td style="text-align: left;">Rolling policy of 1 month for World</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">shservices.mundiwebservices.com/api/v1/catalog/collections/sentinel-1-grd</td>
-<td style="text-align: left;">Rolling policy of 48 months for Europe <br> Rolling policy of 12 months for World</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">code-de.sentinel-hub.com/api/v1/catalog/collections/sentinel-1-grd</td>
-<td style="text-align: left;">Germany since October 2014</td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="collection-identifier-sentinel-1-grd" class="level3">
 <h3 class="anchored" data-anchor-id="collection-identifier-sentinel-1-grd">Collection identifier: sentinel-1-grd</h3>
 </section>
@@ -1680,7 +1542,7 @@ Note
 </section>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<p><a href="../../../data/sentinel-1-grd/examples/">S1 GRD examples</a></p>
+<p><a href="../../../APIs/SentinelHub/Process/Examples/S1GRD.html">S1 GRD examples</a></p>
 
 
 </section>

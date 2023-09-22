@@ -1116,7 +1116,7 @@ window.onload = function() {
 </section>
 <section id="available-bands-and-data" class="level3">
 <h3 class="anchored" data-anchor-id="available-bands-and-data">Available Bands and Data</h3>
-<p>This chapter will explain the bands and data which can be set in the <a href="../../../evalscript/v3/#input-object-properties">evalscript input object</a>. Any string listed in the column <strong>Name</strong> can be an element of the <code>input.bands</code> array in your evalscript.</p>
+<p>This chapter will explain the bands and data which can be set in the <a href="../../../APIs/SentinelHub/Evalscript/V3.html#input-object-properties">evalscript input object</a>. Any string listed in the column <strong>Name</strong> can be an element of the <code>input.bands</code> array in your evalscript.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -1205,16 +1205,6 @@ window.onload = function() {
 <td style="text-align: left;">CLD</td>
 <td style="text-align: left;">Cloud probability, based on Sen2Cor processor</td>
 <td style="text-align: left;">20m</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">CLP</td>
-<td style="text-align: left;">Cloud probability, based on s2cloudless (<a href="../../../user-guides/cloud-masks/">more</a>)</td>
-<td style="text-align: left;">160m</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CLM</td>
-<td style="text-align: left;">Cloud masks (<a href="../../../user-guides/cloud-masks/">more</a>)</td>
-<td style="text-align: left;">160m</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sunAzimuthAngles</td>
@@ -1324,20 +1314,6 @@ Note
 <td style="text-align: left;">PERCENT</td>
 <td style="text-align: left;">UINT8</td>
 <td style="text-align: left;">0 - 100</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CLP</td>
-<td style="text-align: left;">S2Cloudless cloud probability (unitless), multiplied by 255</td>
-<td style="text-align: left;">DN</td>
-<td style="text-align: left;">UINT8</td>
-<td style="text-align: left;">0 - 255 (divide by 255 to get to the [0-1] range)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">CLM</td>
-<td style="text-align: left;">S2Cloudless cloud mask (unitless)</td>
-<td style="text-align: left;">DN</td>
-<td style="text-align: left;">UINT8</td>
-<td style="text-align: left;">0 - no clouds<br> 1 - clouds<br> 255 - no data</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sunAzimuthAngles</td>

@@ -1066,8 +1066,8 @@ window.onload = function() {
 <ol type="1">
 <li>Original or multilooked source chosen (depending on the resolution level; multilooking is done in ground range. Also <a href="#differences-in-capabilities">see</a>.)</li>
 <li>Calibration to the chosen backscatter coefficient and thermal noise removal applied.</li>
-<li>(Optional) <a href="#speckle-filtering">Speckle filtering</a> on the source data (see the <a href="../../../data/sentinel-1-grd/examples/#s1grd-non-orthorectified-lee-speckle-filtered-decibel-gamma0-hh-between--20-db-and-10-db-png">example</a>).</li>
-<li>(Optional) Radiometric terrain correction using <a href="https://www.geo.uzh.ch/microsite/rsl-documents/research/publications/peer-reviewed-articles/201108-TGRS-Small-tcGamma-3809999360/201108-TGRS-Small-tcGamma.pdf" target="_blank">area integration</a> is performed. The <a href="../../../data/dem/">Mapzen or Copernicus DEM</a> is used (see the <a href="../../../data/sentinel-1-grd/examples/#s1grd-radiometrically-terrain-corrected-linear-gamma0-vv-between-0-and-05-png">example</a>).</li>
+<li>(Optional) <a href="#speckle-filtering">Speckle filtering</a> on the source data (see the <a href="../../../APIs/SentinelHub/Process/Examples/S1GRD.html#s1grd-non-orthorectified-lee-speckle-filtered-decibel-gamma0-hh-between--20-db-and-10-db-png">example</a>).</li>
+<li>(Optional) Radiometric terrain correction using <a href="https://www.geo.uzh.ch/microsite/rsl-documents/research/publications/peer-reviewed-articles/201108-TGRS-Small-tcGamma-3809999360/201108-TGRS-Small-tcGamma.pdf" target="_blank">area integration</a> is performed. The <a href="../../../data/dem/">Mapzen or Copernicus DEM</a> is used (see the <a href="../../../APIs/SentinelHub/Process/Examples/S1GRD.html#s1grd-radiometrically-terrain-corrected-linear-gamma0-vv-between-0-and-05-png">example</a>).</li>
 <li>(Optional) Orthorectification using Range-Doppler terrain correction using the <a href="../../../data/dem/">Mapzen or Copernicus DEM</a>.</li>
 </ol>
 <p>Notes:</p>
@@ -1323,7 +1323,7 @@ window.onload = function() {
 <p>[5]: The Copernicus 30m DEM has global coverage if used for the processing of Sentinel-1 data.</p>
 <section id="speckle-filtering" class="level4">
 <h4 class="anchored" data-anchor-id="speckle-filtering">Speckle Filtering</h4>
-<p>Speckle filtering is applied right after calibration and noise removal and done on source data. To enable speckle filtering, add the speckle filter object with the correct type and parameters to your processing options, as shown in <a href="../../../data/sentinel-1-grd/examples/#s1grd-non-orthorectified-lee-speckle-filtered-decibel-gamma0-hh-between--20-db-and-10-db-png">this example</a>).</p>
+<p>Speckle filtering is applied right after calibration and noise removal and done on source data. To enable speckle filtering, add the speckle filter object with the correct type and parameters to your processing options, as shown in <a href="../../../APIs/SentinelHub/Process/Examples/S1GRD.html#s1grd-non-orthorectified-lee-speckle-filtered-decibel-gamma0-hh-between--20-db-and-10-db-png">this example</a>).</p>
 <p>Available filters:</p>
 <ol type="1">
 <li>The <code>NONE</code> filter, which as the name implies, does nothing, and is equivalent to not having the filter defined at all.</li>
@@ -1349,14 +1349,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As an alternative or in addition to this, you can also perform <a href="../../../data/sentinel-1-grd/examples/#s1grd-orthorectified-gamma0-two-month-temporal-averaged-decibel-vv-between--20-db-and-0-db-png">multitemporal averaging</a> to reduce speckle.</p>
+<p>As an alternative or in addition to this, you can also perform <a href="../../../APIs/SentinelHub/Process/Examples/S1GRD.html#s1grd-orthorectified-gamma0-two-month-temporal-averaged-decibel-vv-between--20-db-and-0-db-png">multitemporal averaging</a> to reduce speckle.</p>
 </div>
 </div>
 </section>
 </section>
 <section id="available-bands-and-data" class="level3">
 <h3 class="anchored" data-anchor-id="available-bands-and-data">Available Bands and Data</h3>
-<p>Information in this chapter is useful when defining <a href="../../../evalscript/v3/#input-object-properties"><code>input</code> object</a> in evalscript. Any string listed in the column <strong>Name</strong> can be an element of the <code>input.bands</code> array in your evalscript.</p>
+<p>Information in this chapter is useful when defining <a href="../../../APIs/SentinelHub/Evalscript/V3.html#input-object-properties"><code>input</code> object</a> in evalscript. Any string listed in the column <strong>Name</strong> can be an element of the <code>input.bands</code> array in your evalscript.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -1510,7 +1510,7 @@ Note
 <h2 class="anchored" data-anchor-id="collection-specific-constraints">Collection specific constraints</h2>
 <ul>
 <li><strong>Noise</strong>: All products on both services have thermal noise reduction applied.</li>
-<li><strong>Decibel units</strong>: For decibel outputs, a conversion is necessary within your evalscript, see an example <a href="../../../data/sentinel-1-grd/examples//#s1grd-orthorectified-decibel-gamma0-vh-between--20-db-and-0-db-png">here</a>. We offer pre-defined evalscripts, which return S1GRD values in decibel units, as products in the Configuration Utility for your convenience.</li>
+<li><strong>Decibel units</strong>: For decibel outputs, a conversion is necessary within your evalscript, see an example <a href="../../../APIs/SentinelHub/Process/Examples/S1GRD.html#s1grd-orthorectified-decibel-gamma0-vh-between--20-db-and-0-db-png">here</a>. We offer pre-defined evalscripts, which return S1GRD values in decibel units, as products in the Configuration Utility for your convenience.</li>
 <li><strong>Orbit state vectors</strong>: We currently use the orbit state vectors provided in the products themselves as we find these sufficient for GRD use.</li>
 </ul>
 </section>

@@ -1058,7 +1058,7 @@ window.onload = function() {
 
 </header>
 
-<p><strong>Bring Your Own COG API is available only for users with Copernicus Service accounts. Contact our <a href="https://helpcenter.dataspace.copernicus.eu/hc/en-gb/requests/new">Copernicus Data Space Ecosystem support</a> to request your Copernicus Service account.</strong></p>
+<p><strong>Bring Your Own COG API is available only for users with Copernicus Service accounts.</strong> Please refer to our <a href="../../FAQ.html">FAQ</a> on account typology change and <a href="https://helpcenter.dataspace.copernicus.eu/hc/en-gb/requests/new" target="_blank">Submit A Request</a> to our Copernicus Data Space Ecosystem Support Team to request your Copernicus Service account accordingly.</p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>Bring Your Own COG API (or shortly "BYOC") enables you to import your own data in Sentinel Hub and access it just like any other data you are used to. To be able to do so, the following conditions should be met:</p>
@@ -1095,7 +1095,7 @@ window.onload = function() {
 <li>All files of each tile needs to have consistent extension (so a tile cannot contain both B1.tiff and B2.TIF).</li>
 <li>The maximum allowable difference between the intersection of all file bounding boxes and each individual file is one pixel of that file [1].</li>
 <li>All files of each band need to have the same bit depth.</li>
-<li>Files can be compressed with DEFLATE, ZLIB, PIXTIFF_ZIP, PACKBITS or LZW compression method. JPEG compression is not supported.</li>
+<li>Files can be compressed with DEFLATE, ZLIB, ZSTD, PIXTIFF_ZIP, PACKBITS or LZW compression method. JPEG compression is not supported.</li>
 <li>Supported sample types and bit depths are the same as those supported for outputs, as well as reading unsigned integer 1, 2, 4 bit files. See also <a href="../../APIs/SentinelHub/Evalscript/V3.html#sampletype">sampleType</a>.</li>
 </ul>
 <p>Bands can have different resolutions.</p>
@@ -1161,30 +1161,30 @@ Note
 </section>
 <section id="bucket-settings" class="level2">
 <h2 class="anchored" data-anchor-id="bucket-settings">Bucket settings</h2>
-<p>If you do not yet have a bucket at Copernicus Data Space Ecosystem, please follow <a href="https://creodias.docs.cloudferro.com/en/latest/s3/Create-S3-bucket-and-use-it-in-Sentinel-Hub-requests.html">these steps</a> to get one.</p>
-<p>You will have to configure your bucket to allow read access to Sentinel Hub. To do this, <a href="https://creodias.docs.cloudferro.com/en/latest/s3/Bucket-sharing-using-s3-bucket-policy-on-Creodias.html#setting-a-policy-on-the-bucket">update your bucket policy</a> to include the following statement (don’t forget to replace <code>&lt;bucket_name&gt;</code> with your actual bucket name):</p>
-<pre><code>{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "Sentinel Hub permissions",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::ddf4c98b5e6647f0a246f0624c8341d9:root"
-            },
-            "Action": [
-                "s3:GetBucketLocation",
-                "s3:ListBucket",
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::&lt;bucket_name&gt;",
-                "arn:aws:s3:::&lt;bucket_name&gt;/*"
-            ]
-        }
-    ]
-}</code></pre>
-<p>A python script to set a bucket policy can be downloaded <a href="byoc/resources/python/cdse_set_bucket_access_policy.py">here</a>.</p>
+<p>If you do not yet have a bucket at Copernicus Data Space Ecosystem, please follow <a href="https://creodias.docs.cloudferro.com/en/latest/s3/Create-S3-bucket-and-use-it-in-Sentinel-Hub-requests.html" target="_blank">these steps</a> to get one.</p>
+<p>You will have to configure your bucket to allow read access to Sentinel Hub. To do this, <a href="https://creodias.docs.cloudferro.com/en/latest/s3/Bucket-sharing-using-s3-bucket-policy-on-Creodias.html#setting-a-policy-on-the-bucket" target="_blank">update your bucket policy</a> to include the following statement (don’t forget to replace <code>&lt;bucket_name&gt;</code> with your actual bucket name):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    "Version": "2012-10-17",</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    "Statement": [</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            "Sid": "Sentinel Hub permissions",</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            "Effect": "Allow",</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            "Principal": {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                "AWS": "arn:aws:iam::ddf4c98b5e6647f0a246f0624c8341d9:root"</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            "Action": [</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                "s3:GetBucketLocation",</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                "s3:ListBucket",</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                "s3:GetObject"</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            "Resource": [</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                "arn:aws:s3:::&lt;bucket_name&gt;",</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                "arn:aws:s3:::&lt;bucket_name&gt;/*"</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            ]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A python script to set a bucket policy can be downloaded <a href="../../APIs/SentinelHub/Byoc/resources/python/cdse_set_bucket_access_policy.py">here</a>.</p>
 </section>
 <section id="configuring-collections" class="level2">
 <h2 class="anchored" data-anchor-id="configuring-collections">Configuring collections</h2>

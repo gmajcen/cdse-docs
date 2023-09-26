@@ -601,6 +601,18 @@ window.onload = function() {
  <span class="menu-text">Sentinel-5P L2</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../APIs/SentinelHub/Data/DEM.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digital Elevation Model (DEM) Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../APIs/SentinelHub/Data/DataFusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Fusion</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -676,12 +688,6 @@ window.onload = function() {
  <span class="menu-text">CRS support</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../APIs/SentinelHub/Process/DataFusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Fusion</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
@@ -725,6 +731,12 @@ window.onload = function() {
   <div class="sidebar-item-container"> 
   <a href="../../../APIs/SentinelHub/Process/Examples/S5PL2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Examples for S5PL2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../APIs/SentinelHub/Process/Examples/DEM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples for DEM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1221,7 +1233,7 @@ Note
 <h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
 <p>The evaluatePixel function has five positional parameters:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">evaluatePixel</span>(samples<span class="op">,</span> scenes<span class="op">,</span> inputMetadata<span class="op">,</span> customData<span class="op">,</span> outputMetadata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The first two parameters can be objects or arrays depending on requested <a href="#mosaicking">mosaicking</a> as explained below. They are additionally changed for data fusion requests, which is documented separately <a href="../../../APIs/SentinelHub/Process/DataFusion.html">here</a>. The remaining parameters are always objects.</p>
+<p>The first two parameters can be objects or arrays depending on requested <a href="#mosaicking">mosaicking</a> as explained below. They are additionally changed for data fusion requests, which is documented separately <a href="../../../APIs/SentinelHub/Data/DataFusion.html">here</a>. The remaining parameters are always objects.</p>
 <section id="samples" class="level4">
 <h4 class="anchored" data-anchor-id="samples">samples</h4>
 <ul>

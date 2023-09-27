@@ -1160,8 +1160,8 @@ window.onload = function() {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">egm</td>
-<td style="text-align: left;">An option to add geoid heights from an earth gravitational model to the orthometric heights in which case the returned values represent ellipsoidal heights relative to the WGS84 ellipsoid. <br><br> For Copernicus DEMs, we use <a href="https://earth-info.nga.mil/GandG///wgs84/gravitymod/egm2008/egm08_wgs84.html" target="_blank">EGM2008</a>. <strong>TRUE</strong> - returned values are ellipsoid heights <br></td>
-<td style="text-align: left;"><strong>FALSE</strong> - returned values are orthometric heights</td>
+<td style="text-align: left;">An option to add geoid heights from an earth gravitational model to the orthometric heights in which case the returned values represent ellipsoidal heights relative to the WGS84 ellipsoid. <br><br> For Copernicus DEMs, we use <a href="https://earth-info.nga.mil/GandG///wgs84/gravitymod/egm2008/egm08_wgs84.html" target="_blank">EGM2008</a>.</td>
+<td style="text-align: left;"><strong>TRUE</strong> - returned values are ellipsoid heights <br><strong>FALSE</strong> - returned values are orthometric heights</td>
 <td style="text-align: left;"><strong>FALSE</strong></td>
 </tr>
 </tbody>
@@ -1187,7 +1187,7 @@ window.onload = function() {
 <tr class="even">
 <td style="text-align: left;">dataMask</td>
 <td style="text-align: left;">The mask of data/no data pixels (<a href="../../../APIs/SentinelHub/UserGuides/Datamask.html">more</a>).</td>
-<td style="text-align: left;">N/A (dataMask has no source resolution as it is calculated for each output pixel)</td>
+<td style="text-align: left;">N/A<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
 </tr>
 </tbody>
 </table>
@@ -1270,6 +1270,7 @@ window.onload = function() {
 
 <ol>
 <li id="fn1"><p>Actually, we should say "2.5D" to be more precise. The terrain surface embedded in 3D space is modeled in a way that precisely one height is assigned to each pixel. This brings limitations as not all 3D shapes (e.g., overhangs, vertical walls, caves) can be fully modeled.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>dataMask has no source resolution as it is calculated for each output pixel.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation - Processing Unit definition</title>
+<title>Documentation - Bring Your Own COG / Batch</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../APIs/SentinelHub/Overview/ErrorHandling.html" rel="next">
-<link href="../../../APIs/SentinelHub/Overview/RateLimiting.html" rel="prev">
+<link href="../../../APIs/SentinelHub/Data/DataFusion.html" rel="next">
+<link href="../../../APIs/SentinelHub/Data/DEM.html" rel="prev">
 <link href="../../../_images/logos/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -142,7 +142,7 @@ window.onload = function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../APIs.html">APIs</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub.html">Sentinel Hub</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Overview.html">API Overview</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Overview/ProcessingUnit.html">Processing Unit</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../APIs.html">APIs</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub.html">Sentinel Hub</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Data.html">Data</a></li><li class="breadcrumb-item"><a href="../../../APIs/SentinelHub/Data/Byoc.html">Bring Your Own COG / Batch</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -532,11 +532,11 @@ window.onload = function() {
       <div class="sidebar-item-container"> 
             <a href="../../../APIs/SentinelHub/Data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../APIs/SentinelHub/Data/S1GRD.html" class="sidebar-item-text sidebar-link">
@@ -581,7 +581,7 @@ window.onload = function() {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../APIs/SentinelHub/Data/Byoc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../APIs/SentinelHub/Data/Byoc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Bring Your Own COG / Batch</span></a>
   </div>
 </li>
@@ -620,11 +620,11 @@ window.onload = function() {
       <div class="sidebar-item-container"> 
             <a href="../../../APIs/SentinelHub/Overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">API Overview</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../APIs/SentinelHub/Overview/Authentication.html" class="sidebar-item-text sidebar-link">
@@ -639,7 +639,7 @@ window.onload = function() {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../APIs/SentinelHub/Overview/ProcessingUnit.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../APIs/SentinelHub/Overview/ProcessingUnit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing Unit</span></a>
   </div>
 </li>
@@ -1016,18 +1016,27 @@ window.onload = function() {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#general-data-processing---applicable-to-process-api-ogc-api-statistical-api" id="toc-general-data-processing---applicable-to-process-api-ogc-api-statistical-api" class="nav-link active" data-scroll-target="#general-data-processing---applicable-to-process-api-ogc-api-statistical-api">General data processing - applicable to Process API, OGC API, Statistical API</a></li>
-  <li><a href="#sentinel-1-data-processing---applicable-to-process-api-ogc-api-statistical-api" id="toc-sentinel-1-data-processing---applicable-to-process-api-ogc-api-statistical-api" class="nav-link" data-scroll-target="#sentinel-1-data-processing---applicable-to-process-api-ogc-api-statistical-api">Sentinel-1 data processing - applicable to Process API, OGC API, Statistical API</a></li>
-  <li><a href="#data-querying---applicable-to-catalog-api-ogc-wfs" id="toc-data-querying---applicable-to-catalog-api-ogc-wfs" class="nav-link" data-scroll-target="#data-querying---applicable-to-catalog-api-ogc-wfs">Data querying - applicable to Catalog API, OGC WFS</a></li>
-  <li><a href="#batch-processing-api" id="toc-batch-processing-api" class="nav-link" data-scroll-target="#batch-processing-api">Batch Processing API</a></li>
-  <li><a href="#asynchronous-processing-api" id="toc-asynchronous-processing-api" class="nav-link" data-scroll-target="#asynchronous-processing-api">Asynchronous Processing API</a></li>
-  <li><a href="#batch-statistical-api" id="toc-batch-statistical-api" class="nav-link" data-scroll-target="#batch-statistical-api">Batch Statistical API</a></li>
-  <li><a href="#third-party-data-order---applicable-to-third-party-data-import-api" id="toc-third-party-data-order---applicable-to-third-party-data-import-api" class="nav-link" data-scroll-target="#third-party-data-order---applicable-to-third-party-data-import-api">Third party data order - applicable to Third Party Data Import API</a></li>
-  <li><a href="#data-ingestion---applicable-to-bring-your-own-cog-api-and-zarr-api" id="toc-data-ingestion---applicable-to-bring-your-own-cog-api-and-zarr-api" class="nav-link" data-scroll-target="#data-ingestion---applicable-to-bring-your-own-cog-api-and-zarr-api">Data ingestion - applicable to Bring your own COG API and Zarr API</a></li>
-  <li><a href="#request-cost-calculation-examples" id="toc-request-cost-calculation-examples" class="nav-link" data-scroll-target="#request-cost-calculation-examples">Request cost calculation examples</a>
+  <li><a href="#about-byoc--batch-data" id="toc-about-byoc--batch-data" class="nav-link active" data-scroll-target="#about-byoc--batch-data">About BYOC / Batch Data</a></li>
+  <li><a href="#accessing-data" id="toc-accessing-data" class="nav-link" data-scroll-target="#accessing-data">Accessing data</a>
   <ul>
-  <li><a href="#sentinel-1-change-detection" id="toc-sentinel-1-change-detection" class="nav-link" data-scroll-target="#sentinel-1-change-detection">Sentinel-1 change detection</a></li>
-  <li><a href="#ndvi-calculation-for-a-parcel" id="toc-ndvi-calculation-for-a-parcel" class="nav-link" data-scroll-target="#ndvi-calculation-for-a-parcel">NDVI calculation for a parcel</a></li>
+  <li><a href="#data-type-identifier" id="toc-data-type-identifier" class="nav-link" data-scroll-target="#data-type-identifier">Data type identifier</a></li>
+  <li><a href="#request-resolution-limit" id="toc-request-resolution-limit" class="nav-link" data-scroll-target="#request-resolution-limit">Request resolution limit</a></li>
+  <li><a href="#filtering-options" id="toc-filtering-options" class="nav-link" data-scroll-target="#filtering-options">Filtering Options</a>
+  <ul class="collapse">
+  <li><a href="#mosaickingorder" id="toc-mosaickingorder" class="nav-link" data-scroll-target="#mosaickingorder">mosaickingOrder</a></li>
+  </ul></li>
+  <li><a href="#processing-options" id="toc-processing-options" class="nav-link" data-scroll-target="#processing-options">Processing Options</a></li>
+  <li><a href="#available-bands-and-data" id="toc-available-bands-and-data" class="nav-link" data-scroll-target="#available-bands-and-data">Available Bands and Data</a></li>
+  <li><a href="#units" id="toc-units" class="nav-link" data-scroll-target="#units">Units</a></li>
+  <li><a href="#ogc-api" id="toc-ogc-api" class="nav-link" data-scroll-target="#ogc-api">OGC API</a>
+  <ul class="collapse">
+  <li><a href="#wfs" id="toc-wfs" class="nav-link" data-scroll-target="#wfs">WFS</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#catalog-api-capabilities" id="toc-catalog-api-capabilities" class="nav-link" data-scroll-target="#catalog-api-capabilities">Catalog API Capabilities</a>
+  <ul>
+  <li><a href="#collection-identifier-collection-id" id="toc-collection-identifier-collection-id" class="nav-link" data-scroll-target="#collection-identifier-collection-id">Collection identifier: &lt;collection id&gt;</a></li>
+  <li><a href="#distinct-extension" id="toc-distinct-extension" class="nav-link" data-scroll-target="#distinct-extension">Distinct extension</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/eu-cdse/documentation/issues" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -1037,7 +1046,7 @@ window.onload = function() {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Processing Unit definition</h1>
+<h1 class="title">Bring Your Own COG / Batch</h1>
 </div>
 
 
@@ -1052,289 +1061,112 @@ window.onload = function() {
 
 </header>
 
-<p><em>⚠ Costs marked with ** are not yet applied. These will come in effect by September 1st 2023.</em></p>
-<section id="general-data-processing---applicable-to-process-api-ogc-api-statistical-api" class="level2">
-<h2 class="anchored" data-anchor-id="general-data-processing---applicable-to-process-api-ogc-api-statistical-api">General data processing - applicable to Process API, OGC API, Statistical API</h2>
-<p>Each request costs a proportional amount of processing unit(s), depending on what data and processing is requested. One processing unit (PU) is defined as a request for:</p>
-<ul>
-<li>an output (image) size of 512 x 512 pixels,</li>
-<li>3 collection input bands,</li>
-<li>one data <code>sample</code> per pixel (see <a href="../../../APIs/SentinelHub/Evalscript/V3.html#parameters">sample</a>),</li>
-<li>an output (image) format not exceeding 16 bits per pixel,</li>
-<li>without additional processing (e.g.&nbsp;orthorectification) applied,</li>
-</ul>
-<p>In addition to this:</p>
-<ul>
-<li>Minimal cost of a request is
-<ul>
-<li>0.005 PU for Process API and OGC API,</li>
-<li>0.01 PU for Statistical API.</li>
-</ul></li>
-<li>The number of remaining processing units is reduced only when a request successfully executes, i.e.&nbsp;when the response code is <code>2XX</code>.</li>
-</ul>
-<p>"Multiplication factors" are used to calculate how many processing units are required for each request. The definition of 1 processing unit and the calculation rules are summarized in the following tables:</p>
+<section id="about-byoc--batch-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-byoc--batch-data">About BYOC / Batch Data</h2>
+<p>Bring Your Own COG (BYOC) and Batch data is data ingested by Sentinel Hub users using <a href="../../../APIs/SentinelHub/Byoc.html">BYOC API</a> and <a href="../../../APIs/SentinelHub/Batch.html#batch-collection">Batch API</a>, respectively.</p>
+</section>
+<section id="accessing-data" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-data">Accessing data</h2>
+<p>Data is accessed using Sentinel Hub APIs, just like any other data you are used to. In all cases <code>collection id</code> is needed, which can be obtained from your <a href="https://shapps.dataspace.copernicus.eu/dashboard/#/byoc" target="_blank">dashboard</a>. You also need to access data from the correct endpoint.</p>
+<section id="data-type-identifier" class="level3">
+<h3 class="anchored" data-anchor-id="data-type-identifier">Data type identifier</h3>
+<p>Use <code>byoc-&lt;collectionId&gt;</code> for BYOC, and <code>batch-&lt;collectionId&gt;</code> for Batch as the value of the <code>input.data.type</code> parameter in your API requests. For example, set it to <code>byoc-017aa0ae-33a6-45d3-8548-0f7d1041b40c</code> for BYOC collection with id <code>017aa0ae-33a6-45d3-8548-0f7d1041b40c</code>.</p>
+</section>
+<section id="request-resolution-limit" class="level3">
+<h3 class="anchored" data-anchor-id="request-resolution-limit">Request resolution limit</h3>
+<p>For the limit, we take five times the median resolution of the lowest resolution overview of all tiles in the collection. If this resolution is higher than 500 meters per pixel, the limit is set at 500 meters per pixel. This is to allow for more zoomed out viewing. Note, only overviews which are at least 256 pixels in either width or height are used for this computation. Adding or removing tiles from a collection will recompute its limit.</p>
+<p>You can see the computed resolution limit for a collection in the collection details in your dashboard. Alternatively, in the response if querying a collection using the BYOC API.</p>
+</section>
+<section id="filtering-options" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-options">Filtering Options</h3>
+<p>This chapter will explain the <code>input.data.dataFilter</code> object.</p>
+<section id="mosaickingorder" class="level4">
+<h4 class="anchored" data-anchor-id="mosaickingorder">mosaickingOrder</h4>
+<p>Sets the order of overlapping tiles from which the output result is mosaicked. The tiling is defined by the user when ingesting the data in the collection.</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Parameter/API</th>
-<th style="text-align: left;">Quantity for 1 PU</th>
-<th style="text-align: left;">Rules for multiplication factors</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Area of interest</td>
-<td style="text-align: left;">512 x 512 px</td>
-<td style="text-align: left;">The multiplication factor is calculated by dividing requested input size (BBOX) by 512 x 512 (pixel size depends on the user-defined resolution of the request execution).<br> <br> The minimum value of this multiplication factor is 0.01. This corresponds to an area of 0.25 km^2 for Sentinel-2 data at 10 m spatial resolution.</td>
+<td style="text-align: left;"><strong>mostRecent</strong></td>
+<td style="text-align: left;">The pixel will be selected from the tile, which the most recent <code>sensing time</code>.</td>
+<td style="text-align: left;">In case there are more tiles available with the same <code>sensing time</code>, the one, which was created later will be used.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Number of input bands</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">The multiplication factor is calculated by dividing the requested number of input bands by 3.<br> <br>An exception is requesting <code>dataMask</code> which is not counted, unless it is the only band included.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Output format</td>
-<td style="text-align: left;">8 bit or 16 bit<br> TIFF/JPG/PNG</td>
-<td style="text-align: left;">Requesting 32 bit float TIFF will result in a multiplication factor of 2 due to larger memory consumption and data traffic.<br> <br> Requesting application/octet-stream will result in a multiplication factor of 1.4 due to additional integration costs <em>(This is used for integration with external tools such as xcube.)</em>.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of data samples</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">The multiplication factor equals the number of data samples per pixel.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Data fusion</td>
-<td style="text-align: left;">N/A</td>
-<td style="text-align: left;">The multiplication is only applied when data fusion is used.<br> Multiplication factor is calculated as a sum of all collections within the same endpoint location and twice the sum of all remote collections, i.e.&nbsp;<code>count(local_collections) + 2x count(remote_collections)</code>.<br><br> Example: data fusion request executed on services.sentinel-hub.com endpoint, which includes Sentinel-2 L1C, Sentinel-2 L2A and Landsat-9 would have a multiplication factor of 4 (1 + 1 + 2).</td>
+<td style="text-align: left;"><strong>leastRecent</strong></td>
+<td style="text-align: left;">Similar to <strong>mostRecent</strong> but in reverse order.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="sentinel-1-data-processing---applicable-to-process-api-ogc-api-statistical-api" class="level2">
-<h2 class="anchored" data-anchor-id="sentinel-1-data-processing---applicable-to-process-api-ogc-api-statistical-api">Sentinel-1 data processing - applicable to Process API, OGC API, Statistical API</h2>
-<p>In addition to General data processing rules defined above, the following optional multiplicators apply as well:</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter/API</th>
-<th style="text-align: left;">Quantity for 1 PU</th>
-<th style="text-align: left;">Rules for multiplication factors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Orthorectification</td>
-<td style="text-align: left;">N/A</td>
-<td style="text-align: left;">Requesting orthorectification will result in a multiplication factor of 2 due to additional processing requirements .</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Radiometric Terrain Correction</td>
-<td style="text-align: left;">N/A</td>
-<td style="text-align: left;">Requesting radiometric terrain correction will result in a multiplication factor of 2.5 due to additional processing requirements. The orthorectification factor is not additionally applied as it is a prerequisite.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Speckle Filtering</td>
-<td style="text-align: left;">N/A</td>
-<td style="text-align: left;">Requesting speckle filtering will result in a multiplication factor of 2 due to additional processing requirements.</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="data-querying---applicable-to-catalog-api-ogc-wfs" class="level2">
-<h2 class="anchored" data-anchor-id="data-querying---applicable-to-catalog-api-ogc-wfs">Data querying - applicable to Catalog API, OGC WFS</h2>
-<p>Each request costs a proportional amount of processing unit(s) depending on what data and processing is requested. One processing unit (PU) is defined as a request for:</p>
-<ul>
-<li>area of 1000 x 1000 km</li>
-<li>time period up to one month</li>
-</ul>
-<p>In addition to this:</p>
-<ul>
-<li>Minimal cost of a request is 0.01 PU.</li>
-<li>Maximal cost of a request is 1 PU.</li>
-<li>The number of remaining processing units is reduced only when a request successfully executes, i.e.&nbsp;when the response code is 2XX.</li>
-</ul>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter/API</th>
-<th style="text-align: left;">Quantity for 1 PU</th>
-<th style="text-align: left;">Rules for multiplication factors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Area of interest</td>
-<td style="text-align: left;">1 000 000 km2</td>
-<td style="text-align: left;">The multiplication factor is calculated by dividing requested input area of interest (BBOX) by 1 000 000.<br>The minimum value of this multiplication factor is 0.01. This corresponds to an area of 10 000 km2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Time period</td>
-<td style="text-align: left;">1 month</td>
-<td style="text-align: left;">The multiplication factor is calculated by ceiling requested time period in months.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="batch-processing-api" class="level2">
-<h2 class="anchored" data-anchor-id="batch-processing-api">Batch Processing API</h2>
-<p>"General data processing" and "Sentinel-1 data processing" rules apply with the following exceptions:</p>
-<ul>
-<li>Minimal cost of a request is 100 PU.</li>
-<li>Processing with batch processing API will result in a multiplication factor of 1/3. Thus, three times more data can be processed comparing to process API for the same amount of PUs.</li>
-<li>** When data is delivered to a bucket in other region within the same system (i.e.&nbsp;Copernicus Data Space Ecosystem, AWS) there is additional cost of 0.03 PU per MB of data.</li>
-</ul>
-</section>
-<section id="asynchronous-processing-api" class="level2">
-<h2 class="anchored" data-anchor-id="asynchronous-processing-api">Asynchronous Processing API</h2>
-<p>"General data processing" and "Sentinel-1 data processing" rules apply with the following exceptions:</p>
-<ul>
-<li>Minimal cost of a request is 10 PU.</li>
-<li>** When data is delivered to a bucket in other region within the same system (i.e.&nbsp;Copernicus Data Space Ecosystem, AWS) there is an additional cost of 0.03 PU per MB of data.</li>
-</ul>
-</section>
-<section id="batch-statistical-api" class="level2">
-<h2 class="anchored" data-anchor-id="batch-statistical-api">Batch Statistical API</h2>
-<p>"General data processing" and "Sentinel-1 data processing" rules apply with the following exceptions:</p>
-<ul>
-<li>Minimal cost of a request is 100 PU.</li>
-<li>** When data is delivered to a bucket in other region within the same system (i.e.&nbsp;Copernicus Data Space Ecosystem, AWS) there is an additional cost of 0.03 PU per MB of data.</li>
-</ul>
-</section>
-<section id="third-party-data-order---applicable-to-third-party-data-import-api" class="level2">
-<h2 class="anchored" data-anchor-id="third-party-data-order---applicable-to-third-party-data-import-api">Third party data order - applicable to Third Party Data Import API</h2>
-<ul>
-<li>** Each search request costs 1 PU.</li>
-<li>** Each thumbnail request costs 1 PU.</li>
-<li>** Each created order/subscription costs 5 PU.</li>
-<li>** Each processed order delivery costs 5 PU.</li>
-<li>** Each processed subscription delivery costs 2 PU.</li>
-</ul>
-</section>
-<section id="data-ingestion---applicable-to-bring-your-own-cog-api-and-zarr-api" class="level2">
-<h2 class="anchored" data-anchor-id="data-ingestion---applicable-to-bring-your-own-cog-api-and-zarr-api">Data ingestion - applicable to Bring your own COG API and Zarr API</h2>
-<ul>
-<li>Each non-GET request to BYOC or Zarr API costs 1 PU.</li>
-<li>Usage of your BYOC and Zarr collections is billed the same as usage of public collections.</li>
-</ul>
-</section>
-<section id="request-cost-calculation-examples" class="level2">
-<h2 class="anchored" data-anchor-id="request-cost-calculation-examples">Request cost calculation examples</h2>
-<section id="sentinel-1-change-detection" class="level3">
-<h3 class="anchored" data-anchor-id="sentinel-1-change-detection">Sentinel-1 change detection</h3>
-<p>An example of calculation of processing units for a Sentinel-1 change detection request (e.g.&nbsp;comparison of two time slices) is presented in the table below.</p>
+<section id="processing-options" class="level3">
+<h3 class="anchored" data-anchor-id="processing-options">Processing Options</h3>
+<p>This chapter will explain the <code>input.data.processing</code> object of the <code>process</code> API.</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Quantity</th>
-<th style="text-align: left;">Multiplication factor</th>
-<th style="text-align: left;">Details</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Values</th>
+<th style="text-align: left;">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Output size (width x height)</td>
-<td style="text-align: left;">1024 x 1024 px</td>
-<td style="text-align: left;">x 4</td>
-<td style="text-align: left;">The requested output size is 1024 x 1024 px which is 4 times larger than the output size for one PU (512 x 512 px). Hence the multiplication factor is 4.</td>
+<td style="text-align: left;">upsampling</td>
+<td style="text-align: left;">Defines the interpolation used for processing when the pixel resolution is greater than the source resolution (e.g.&nbsp;5m/px with a 10m/px source)</td>
+<td style="text-align: left;"><strong>NEAREST</strong> - <a href="https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation" target="_blank">nearest neighbour interpolation</a> <br> <strong>BILINEAR</strong> - <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation" target="_blank">bilinear interpolation</a> <br> <strong>BICUBIC</strong> - <a href="https://en.wikipedia.org/wiki/Bicubic_interpolation" target="_blank">bicubic interpolation</a></td>
+<td style="text-align: left;"><strong>NEAREST</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Number of input bands</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">x 4/3</td>
-<td style="text-align: left;">4 input bands are requested, which is 4/3 times more than 3 input bands, which are included in one PU. The multiplication factor is thus 4/3.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Output format</td>
-<td style="text-align: left;">32-bit float</td>
-<td style="text-align: left;">x 2</td>
-<td style="text-align: left;">The requested 32 bit float TIFF has a multiplication factor of 2.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of data samples</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">x 2</td>
-<td style="text-align: left;">2 data samples (one for each time slice) were requested for each pixel. Thus the multiplication factor is 2.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Orthorectification</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">x 2</td>
-<td style="text-align: left;">Ortorectification is requested, which results in a multiplication factor of 2.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;"><strong>42.667 processing units</strong></td>
-<td style="text-align: left;">To calculate the number of processing units for this request multiply all the individual multiplication factors:<br> 4 x 4/3 x 2 x 2 x 2 = <strong>42.667</strong></td>
+<td style="text-align: left;">downsampling</td>
+<td style="text-align: left;">As above except when the resolution is lower.</td>
+<td style="text-align: left;"><strong>NEAREST</strong> - <a href="https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation" target="_blank">nearest neighbour interpolation</a> <br> <strong>BILINEAR</strong> - <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation" target="_blank">bilinear interpolation</a> <br> <strong>BICUBIC</strong> - <a href="https://en.wikipedia.org/wiki/Bicubic_interpolation" target="_blank">bicubic interpolation</a></td>
+<td style="text-align: left;"><strong>NEAREST</strong></td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Statistical API is also a multi-temporal request. The same rules for calculating multiplication factors apply.</p>
-</div>
-</div>
 </section>
-<section id="ndvi-calculation-for-a-parcel" class="level3">
-<h3 class="anchored" data-anchor-id="ndvi-calculation-for-a-parcel">NDVI calculation for a parcel</h3>
-<p>An example of calculation of processing units of NDVI value over a 4 hectare large parcel at 10 m spatial resolution is presented in the table below.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Quantity</th>
-<th style="text-align: left;">Multiplication factor</th>
-<th style="text-align: left;">Details</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Output size (width x height)</td>
-<td style="text-align: left;">20 x 20 px</td>
-<td style="text-align: left;">x 0.01</td>
-<td style="text-align: left;">The requested output size is 20 x 20 px which is smaller than the minimum area, thus the multiplication factor is 0.01.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of input bands</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">x 2/3</td>
-<td style="text-align: left;">2 input bands are requested, thus the multiplication factor is 2/3.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Output format</td>
-<td style="text-align: left;">16-bit tiff</td>
-<td style="text-align: left;">x 1</td>
-<td style="text-align: left;">The same as in the definition of one processing unit, thus the multiplication factor is 1.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of data samples</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">x 1</td>
-<td style="text-align: left;">The same as in the definition of one processing unit, thus the multiplication factor is 1.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Orthorectification</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">x 1</td>
-<td style="text-align: left;">The same as in the definition of one processing unit, thus the multiplication factor is 1.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;"><strong>0.0067 processing units</strong></td>
-<td style="text-align: left;">To calculate the number of processing units for this request multiply all the individual multiplication factors: <br> 0.01 x 2/3 x 1 x 1 = <strong>0.0067</strong></td>
-</tr>
-</tbody>
-</table>
+<section id="available-bands-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="available-bands-and-data">Available Bands and Data</h3>
+<p>Since collections contains your data this means that the available bands are the ones you have prepared. The band names to use in you evalscript are also listed in each collection in your <a href="https://shapps.dataspace.copernicus.eu/dashboard/#/byoc" target="_blank">dashboard</a>.</p>
+<p><code>dataMask</code> is also available. In BYOC, dataMask value equals 1 only when a pixel is contained within cover geometry of a BYOC tile and when a pixel has data at the same time. All other instances (e.g.&nbsp;a pixel with data outside tile's cover geometry or a pixel with no-data within tile's cover geometry) will result in <code>dataMask</code> 0. Note also that for floating point rasters, NaN is always treated as no data. See <a href="../../../APIs/SentinelHub/UserGuides/Datamask.html">here</a> for more information.</p>
+</section>
+<section id="units" class="level3">
+<h3 class="anchored" data-anchor-id="units">Units</h3>
+<p>The only units available are digital numbers (<code>DN</code>) so any unit conversions, if necessary, are the responsibility of your evalscript.</p>
+</section>
+<section id="ogc-api" class="level3">
+<h3 class="anchored" data-anchor-id="ogc-api">OGC API</h3>
+<p>To access your data via OGC you need to create a layer in the <a href="https://shapps.dataspace.copernicus.eu/dashboard/#/configurations" target="_blank">Configuration utility</a> in either an existing or new configuration. When adding a layer you should set <code>Source</code> to <code>Bring Your Own COG</code> and <code>Collection id</code> to the id of your collection. You should also enter a custom script in <code>Data processing</code> field. This should return the appropriate values based on bands that are defined in the collection.</p>
+<p>Once this is done the layer can be used via <a href="../../../APIs/SentinelHub/OGC.html">OGC API</a> in the usual way.</p>
+<p>For example: <code>https://sh.dataspace.copernicus.eu/ogc/wms/&lt;MyInstanceID&gt;?REQUEST=GetMap&amp;BBOX=15959450,8695500,16059450,8795500&amp;CRS=EPSG:3857&amp;WIDTH=500&amp;HEIGHT=500&amp;LAYERS=&lt;MyLayerName&gt;</code></p>
+<section id="wfs" class="level4">
+<h4 class="anchored" data-anchor-id="wfs">WFS</h4>
+<p>To query your tiles using WFS you need to set the WFS feature type (<code>TYPENAMES</code> parameter) to <code>byoc-&lt;MyCollectionID&gt;</code> for BYOC, and <code>batch-&lt;MyCollectionID&gt;</code> for Batch, e.g. <code>byoc-a550f5e9-84d0-441a-8338-bbb04d42a72e</code>.</p>
+<p>Here is an example of a WFS <code>GetFeature</code> request:</p>
+<p><code>https://sh.dataspace.copernicus.eu/ogc/wfs/&lt;MyInstanceID&gt;?SERVICE=wfs&amp;REQUEST=GetFeature&amp;BBOX=-90,180,90,-180&amp;SRSNAME=EPSG:4326&amp;OUTPUTFORMAT=application/json&amp;TYPENAMES=byoc-&lt;MyCollectionID&gt;</code></p>
+</section>
+</section>
+</section>
+<section id="catalog-api-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="catalog-api-capabilities">Catalog API Capabilities</h2>
+<p>To access Landsat BYOC or Batch product metadata you need to send search request to our <a href="../../../APIs/SentinelHub/Catalog.html">Catalog API</a>. The requested metadata will be returned as JSON formatted response to your request.</p>
+<section id="collection-identifier-collection-id" class="level3">
+<h3 class="anchored" data-anchor-id="collection-identifier-collection-id">Collection identifier: &lt;collection id&gt;</h3>
+</section>
+<section id="distinct-extension" class="level3">
+<h3 class="anchored" data-anchor-id="distinct-extension">Distinct extension</h3>
+<ul>
+<li><code>date</code></li>
+</ul>
 
 
 </section>
@@ -1576,13 +1408,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../../APIs/SentinelHub/Overview/RateLimiting.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rate limiting</span>
+      <a href="../../../APIs/SentinelHub/Data/DEM.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Digital Elevation Model (DEM) Data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../APIs/SentinelHub/Overview/ErrorHandling.html" class="pagination-link">
-        <span class="nav-page-text">Error Handling</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../APIs/SentinelHub/Data/DataFusion.html" class="pagination-link">
+        <span class="nav-page-text">Data Fusion</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

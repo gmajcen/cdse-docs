@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -1005,11 +1039,33 @@ window.onload = function() {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-dem-data" id="toc-about-dem-data" class="nav-link active" data-scroll-target="#about-dem-data">About DEM Data</a></li>
+  <li><a href="#mission-information" id="toc-mission-information" class="nav-link" data-scroll-target="#mission-information">Mission information</a></li>
+  <li><a href="#attribution-and-use" id="toc-attribution-and-use" class="nav-link" data-scroll-target="#attribution-and-use">Attribution and use</a></li>
+  <li><a href="#accessing-dem-data" id="toc-accessing-dem-data" class="nav-link" data-scroll-target="#accessing-dem-data">Accessing DEM Data</a>
+  <ul>
+  <li><a href="#data-type-identifier-dem" id="toc-data-type-identifier-dem" class="nav-link" data-scroll-target="#data-type-identifier-dem">Data type identifier: dem</a></li>
+  <li><a href="#filtering-options" id="toc-filtering-options" class="nav-link" data-scroll-target="#filtering-options">Filtering Options</a>
+  <ul class="collapse">
+  <li><a href="#deminstance" id="toc-deminstance" class="nav-link" data-scroll-target="#deminstance">demInstance</a></li>
+  </ul></li>
+  <li><a href="#processing-options" id="toc-processing-options" class="nav-link" data-scroll-target="#processing-options">Processing Options</a></li>
+  <li><a href="#available-bands-and-data" id="toc-available-bands-and-data" class="nav-link" data-scroll-target="#available-bands-and-data">Available Bands and Data</a></li>
+  <li><a href="#units" id="toc-units" class="nav-link" data-scroll-target="#units">Units</a></li>
+  <li><a href="#scene-object" id="toc-scene-object" class="nav-link" data-scroll-target="#scene-object">Scene Object</a></li>
+  <li><a href="#collection-specific-constraints" id="toc-collection-specific-constraints" class="nav-link" data-scroll-target="#collection-specific-constraints">Collection specific constraints</a></li>
+  </ul></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/eu-cdse/documentation/issues" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -1028,10 +1084,194 @@ window.onload = function() {
 
 </header>
 
+<section id="about-dem-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-dem-data">About DEM Data</h2>
+</section>
+<section id="mission-information" class="level2">
+<h2 class="anchored" data-anchor-id="mission-information">Mission information</h2>
+<p>A <strong>DEM</strong> is a digital model or 3D<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> representation of a terrain's surface. With a DEM you are able to obtain and analayse heights within your area of interest, and integrate the data in 3D applications. The data can also be used for the <strong>orthorectification</strong> of satellite imagery (e.g., Sentinel 1).</p>
+<p><strong>Copernicus DEM</strong> is based on WorldDEM that is infilled on a local basis with the following DEMs: ASTER, SRTM90, SRTM30, SRTM30plus, GMTED2010, TerraSAR-X Radargrammetric DEM, ALOS World 3D-30m. We provide two instances named COPERNICUS_30 and COPERNICUS_90, with worldwide coverage. COPERNICUS_90 uses COP-DEM GLO-90, which has 90 meters resolution. COPERNICUS_30 uses COP-DEM GLO-30 Public, which has 30 meters resolution, where it's available, and for the rest is uses GLO-90. Tiles that are missing from GLO-30 Public are not yet released to the public by Copernicus Programme. Both instances are static and do not depend on the date. We return a homogeneous DEM with zeros in regions where there are no source tiles (e.g.&nbsp;in ocean areas). More information <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank">here</a>.</p>
+</section>
+<section id="attribution-and-use" class="level2">
+<h2 class="anchored" data-anchor-id="attribution-and-use">Attribution and use</h2>
+<p>For Copernicus DEM GLO-90, check the <a href="https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf" target="_blank">terms</a> on page 15, where it says "Licence for COP-DEM-GLO-90-F Global 90m Full, Free &amp; Open. Licence for the use of the Copernicus WorldDEM™-90".</p>
+<p>For Copernicus DEM GLO-30 Public, check the license and terms <a href="DEM/resources/license/License-COPDEM-30.pdf">here</a>.</p>
+</section>
+<section id="accessing-dem-data" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-dem-data">Accessing DEM Data</h2>
+<p>To access data you need to send a POST request to our <code>process</code> API. The requested data will be returned as the response to your request. Each POST request can be tailored to get you exactly the data you require. To do this requires setting various parameters which depend on the collection you are querying. This chapter will help you understand the parameters for DEM data. To see examples of such requests go <a href="../../../APIs/SentinelHub/Process/Examples/DEM.qmd&quot;">here</a>, and for an overview of all API parameters see the <a href="../../../APIs/SentinelHub/ApiReference.html">API Reference</a>.</p>
+<section id="data-type-identifier-dem" class="level3">
+<h3 class="anchored" data-anchor-id="data-type-identifier-dem">Data type identifier: dem</h3>
+<p>Use <code>dem</code> (previously <code>DEM</code>) as the value of the <code>input.data.type</code> parameter in your API requests. This is mandatory and will ensure you get DEM data.</p>
+</section>
+<section id="filtering-options" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-options">Filtering Options</h3>
+<p>This chapter will explain the <code>input.data.dataFilter</code> object of the <code>DEM</code> <code>process</code> API.</p>
+<section id="deminstance" class="level4">
+<h4 class="anchored" data-anchor-id="deminstance">demInstance</h4>
+<p>Sets the DEM to use. Will return the default DEM (COPERNICUS_30) if no parameter is set.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Identifier</th>
+<th style="text-align: left;">DEM</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">COPERNICUS_30</td>
+<td style="text-align: left;">Copernicus DEM GLO-30 Public and GLO-90</td>
+<td style="text-align: left;">30m is infilled with 90m where 30m tiles are not released</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">COPERNICUS_90</td>
+<td style="text-align: left;">Copernicus DEM GLO-90</td>
+<td style="text-align: left;">Global</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="processing-options" class="level3">
+<h3 class="anchored" data-anchor-id="processing-options">Processing Options</h3>
+<p>This chapter will explain the <code>input.data.processing</code> object of the <code>DEM</code> <code>process</code> API.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Values</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">upsampling</td>
+<td style="text-align: left;">Defines the interpolation used for processing when the pixel resolution is greater than the source resolution (e.g.&nbsp;5m/px with a 10m/px source).</td>
+<td style="text-align: left;"><strong>NEAREST</strong> - <a href="https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation" target="_blank">nearest neighbour interpolation</a> <br> <strong>BILINEAR</strong> - <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation" target="_blank">bilinear interpolation</a> <br> <strong>BICUBIC</strong> - <a href="https://en.wikipedia.org/wiki/Bicubic_interpolation" target="_blank">bicubic interpolation</a></td>
+<td style="text-align: left;"><strong>NEAREST</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">downsampling</td>
+<td style="text-align: left;">As above except when the resolution is lower.</td>
+<td style="text-align: left;"><strong>NEAREST</strong> - <a href="https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation" target="_blank">nearest neighbour interpolation</a> <br> <strong>BILINEAR</strong> - <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation" target="_blank">bilinear interpolation</a> <br> <strong>BICUBIC</strong> - <a href="https://en.wikipedia.org/wiki/Bicubic_interpolation" target="_blank">bicubic interpolation</a></td>
+<td style="text-align: left;"><strong>NEAREST</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">egm</td>
+<td style="text-align: left;">An option to add geoid heights from an earth gravitational model to the orthometric heights in which case the returned values represent ellipsoidal heights relative to the WGS84 ellipsoid. <br><br> For Copernicus DEMs, we use <a href="https://earth-info.nga.mil/GandG///wgs84/gravitymod/egm2008/egm08_wgs84.html" target="_blank">EGM2008</a>. <strong>TRUE</strong> - returned values are ellipsoid heights <br></td>
+<td style="text-align: left;"><strong>FALSE</strong> - returned values are orthometric heights</td>
+<td style="text-align: left;"><strong>FALSE</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="available-bands-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="available-bands-and-data">Available Bands and Data</h3>
+<p>Information in this chapter is useful when defining <a href="../../../APIs/SentinelHub/Evalscript/V3.html#input-object-properties"><code>input</code> object</a> in evalscript. A string listed in the column <strong>Name</strong> can be an element of the <code>input.bands</code> array in your evalscript.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Property name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DEM</td>
+<td style="text-align: left;">Heights in meters</td>
+<td style="text-align: left;">Various, depending on the datasource used for the generation of the DEM, <a href="https://github.com/tilezen/joerd/blob/master/docs/images/footprints-preview.png" target="_blank">see</a>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dataMask</td>
+<td style="text-align: left;">The mask of data/no data pixels (<a href="../../../APIs/SentinelHub/UserGuides/Datamask.html">more</a>).</td>
+<td style="text-align: left;">N/A (dataMask has no source resolution as it is calculated for each output pixel)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="units" class="level3">
+<h3 class="anchored" data-anchor-id="units">Units</h3>
+<p>The data values for each band in your custom script are presented in the units as specified here. In case more than one unit is available for a given band, you may optionally set the value of <code>input.units</code> in your evalscript <code>setup</code> function to one of the values in the <code>Sentinel Hub Units</code> column. Doing so will present data in that unit. The Sentinel Hub <code>units</code> parameter combines the physical quantity and corresponding units of measurement values. As such, some names more closely resemble physical quantities, others resemble units of measurement.</p>
+<p>The <code>Source Format</code> specifies how and with what precision the digital numbers (<code>DN</code>) from which the unit is derived are encoded. Bands requested in <code>DN</code> units contain exactly the pixel values of the source data. Note that resampling may produce interpolated values. <code>DN</code> is also used whenever a band is derived computationally (like dataMask); such bands can be identified by having <code>DN</code> units and <code>N/A</code> source format. <code>DN</code> values are typically not offered if they do not simply represent any physical quantity, in particular, when <code>DN</code> values require source-specific (i.e.&nbsp;non-global) conversion to physical quantities.</p>
+<p>Values in non-<code>DN</code> units are computed from the source (<code>DN</code>) values with at least float32 precision. Note that the conversion might be nonlinear, therefore the full value range and quantization step size of such a band can be hard to predict. Band values in evalscripts always behave as floating point numbers, regardless of the actual precision.</p>
+<p>The <code>Typical Range</code> indicates what values are common for a given band and unit, however outliers can be expected.</p>
+<p>For DEM, <code>DN</code> (digital numbers) are the default and only unit. <code>DN</code> values equal elevation.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Band</th>
+<th style="text-align: left;">Physical Quantity (units)</th>
+<th style="text-align: left;">Sentinel Hub Units</th>
+<th style="text-align: left;">Source Format</th>
+<th style="text-align: left;">Typical Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DEM</td>
+<td style="text-align: left;">Height (meters)</td>
+<td style="text-align: left;">METERS</td>
+<td style="text-align: left;">FLOAT32</td>
+<td style="text-align: left;">typically positive</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dataMask</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">DN</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">0 - no data<br> 1 - data</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scene-object" class="level3">
+<h3 class="anchored" data-anchor-id="scene-object">Scene Object</h3>
+<p>The <a href="../../../APIs/SentinelHub/Evalscript/V3.html#parameters">evalscript evaluatePixel scene object</a> is not returned/is null when requesting DEM.</p>
+</section>
+<section id="collection-specific-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="collection-specific-constraints">Collection specific constraints</h3>
+<p>DEM values are in meters and can be negative for areas which lie below sea level (e.g.&nbsp;ocean areas or much of the Netherlands). When requesting a DEM a simple way to mitigate this is to set the output format in your evalscript to <strong><code>sampleType: SampleType.FLOAT32</code></strong> or <strong><code>sampleType: SampleType.INT16</code></strong> if this provides sufficient precision for your use. More about output formats can be found <a href="../../../APIs/SentinelHub/Evalscript/V3.html#sampletype">here</a>.</p>
+<p>For output formats <code>sampleType: SampleType.UINT8</code> and <code>sampleType: SampleType.UINT16</code> be careful as negative values can be misinterpreted due to signedness issues as well as potential problems due to <a href="https://en.wikipedia.org/wiki/Integer_overflow" target="_blank">integer overflow</a>. For example:</p>
+<ul>
+<li><code>sampleType: SampleType.UINT8</code> - a height of 256 meters will be encoded as 0 in such a file due to overflow. A height of -1 meter will be encoded as 255.</li>
+<li><code>sampleType: SampleType.UINT16</code>- a height of -15 meters for instance will be encoded as 65520.</li>
+</ul>
+<p>One way to handle this adjustment is to ensure there are no negative values in the output by adding a constant to DEM values, e.g.&nbsp;12000 (the minimum value in DEM is not smaller than -11000 m). If you need actual DEM values (i.e.&nbsp;heights), the constant 12000 must be subtracted from the output values outside of Sentinel Hub.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">//VERSION=3</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>() {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">input</span><span class="op">:</span> [<span class="st">"DEM"</span>]<span class="op">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">output</span><span class="op">:</span>{</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">id</span><span class="op">:</span> <span class="st">"default"</span><span class="op">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">bands</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">sampleType</span><span class="op">:</span> SampleType<span class="op">.</span><span class="at">UINT16</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">evaluatePixel</span>(sample) {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [sample<span class="op">.</span><span class="at">DEM</span> <span class="op">+</span> <span class="dv">12000</span>]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p><a href="../../../APIs/SentinelHub/Process/Examples/DEM.html">DEM examples</a></p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Actually, we should say "2.5D" to be more precise. The terrain surface embedded in 3D space is modeled in a way that precisely one height is assigned to each pixel. This brings limitations as not all 3D shapes (e.g., overhangs, vertical walls, caves) can be fully modeled.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1265,7 +1505,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../../../APIs/SentinelHub/Data/S5PL2.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sentinel-5P L2</span>
@@ -1281,4 +1521,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/eu-cdse/documentation/issues" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+</body></html>
